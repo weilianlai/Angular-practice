@@ -9,7 +9,7 @@ export class AppComponent {
   title= 'conduit';
   subtitle='A place to share your <u>knowledge.</u>';
 
-  list = [
+  originallist = [
     {
       "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
       "slug": "zp7yqc",
@@ -63,7 +63,15 @@ export class AppComponent {
     }
   ]
 
-  doSearch(event:string){
-    console.log("the search key word:" + event)
+  list=this.originallist;
+
+  doSearch($event:any){
+    console.log("the search key word:" + $event)
+    if ($event){
+      this.list= this.originallist.filter(article=>article.title.indexOf($event) !== -1)
+    }
+    else{
+      this.list=this.originallist;
+    }
   }
 }
