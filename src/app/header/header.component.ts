@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   keyword="yyyyyy";
+  ishighLight = false;
+  fontSize=12;
 
   constructor() { }
 
@@ -24,6 +26,8 @@ export class HeaderComponent implements OnInit {
   }
   doSearch(){
     console.log("search")
+    this.ishighLight= !this.ishighLight;
+    ++this.fontSize ;
 
   }
 
