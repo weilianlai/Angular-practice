@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  keyword="yyyyyy";
+  keyword="123";
   ishighLight = false;
   fontSize=12;
+  message = "";
 
   constructor() { }
 
@@ -17,17 +18,20 @@ export class HeaderComponent implements OnInit {
   }
 
   keyEnter(){
+    this.keyword="";
     this.doSearch();
   }
 
   searchClick(event:MouseEvent){
     console.log("searchClick")
+    this.keyword="";
     this.doSearch();
   }
   doSearch(){
     console.log("search")
-    this.ishighLight= !this.ishighLight;
-    ++this.fontSize ;
+    this.keyword="";
+    // this.ishighLight= !this.ishighLight;
+    // ++this.fontSize ;
 
   }
 
