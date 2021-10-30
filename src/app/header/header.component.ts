@@ -8,13 +8,23 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   keyword="yyyyyy";
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  doSearch($event: MouseEvent){
-    console.log($event)
+  keyEnter(){
+    this.doSearch();
+  }
+
+  searchClick(event:MouseEvent){
+    console.log("searchClick")
+    this.doSearch();
+  }
+  doSearch(){
+    console.log("search")
+
   }
 
 }
