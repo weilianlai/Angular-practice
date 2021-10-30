@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EmbeddedViewRef, EventEmitter, OnInit, Output } from '@angular/core';
+
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  keyword="123";
+  @Output() searchKeyword = new EventEmitter<string>();
+
+  keyword="";
   ishighLight = false;
   fontSize=12;
   message = "";
@@ -18,18 +21,18 @@ export class HeaderComponent implements OnInit {
   }
 
   keyEnter(){
-    this.keyword="";
+
     this.doSearch();
   }
 
   searchClick(event:MouseEvent){
-    console.log("searchClick")
-    this.keyword="";
+
     this.doSearch();
   }
   doSearch(){
     console.log("search")
-    this.keyword="";
+    this.searchKeyword.emit(this.keyword);
+
     // this.ishighLight= !this.ishighLight;
     // ++this.fontSize ;
 

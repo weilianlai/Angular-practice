@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -62,4 +62,8 @@ export class AppComponent {
       "favoritesCount": 5
     }
   ]
+
+  doSearch(event:string){
+    console.log("the search key word:" + event)
+  }
 }

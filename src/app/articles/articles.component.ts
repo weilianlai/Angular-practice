@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 
 export class ArticlesComponent implements OnInit {
-  @Input() articles!: any[] ;
+  @Input() articles: any[] =[];
 
   constructor() { }
   ngOnInit(): void {
