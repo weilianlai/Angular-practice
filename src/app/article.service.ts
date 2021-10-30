@@ -1,11 +1,14 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticleService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   originallist = [
     {
@@ -62,6 +65,12 @@ export class ArticleService {
   ]
 
   list = this.originallist;
+
+  getArticles (): Observable <any[]> {
+    return this.http.get<any[]>('http://localhost:3000/articles')
+  }
+
+
 
   doSearch($event: string) {
     console.log("the search key word:" + $event)
