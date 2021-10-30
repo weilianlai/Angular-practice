@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular-practice';
+  logo= 'conduit';
+  slogan='A place to share your knowledge.';
 }
