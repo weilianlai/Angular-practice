@@ -1,3 +1,4 @@
+import { Article } from './article';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
@@ -66,8 +67,8 @@ export class ArticleService {
 
   list = this.originallist;
 
-  getArticles (): Observable <any[]> {
-    return this.http.get<any[]>('http://localhost:3000/articles')
+  getArticles (): Observable <Article[]> {
+    return this.http.get<Article[]>('http://localhost:3000/articles')
   }
 
 
