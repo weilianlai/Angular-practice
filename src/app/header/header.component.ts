@@ -30,7 +30,6 @@ export class HeaderComponent implements OnInit {
     this.doSearch();
   }
   doSearch(){
-    console.log("search")
     this.searchKeyword.emit(this.keyword);
 
     // this.ishighLight= !this.ishighLight;
