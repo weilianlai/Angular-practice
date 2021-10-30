@@ -7,12 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  keyword="yyyyyy";
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  doSearch($event: any){
+  doSearch($event: MouseEvent){
     console.log($event)
   }
 
